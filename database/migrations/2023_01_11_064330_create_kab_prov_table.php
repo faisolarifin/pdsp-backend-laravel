@@ -22,6 +22,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('prov_id');
             $table->string('nm_kab', 100);
+            $table->integer('kode_kab');
             $table->timestamps();
             $table->foreign('prov_id')->references('id')->on('provinsi')->onDelete('restrict')->onUpdate('restrict');
         });

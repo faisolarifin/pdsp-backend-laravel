@@ -27,11 +27,11 @@ return new class extends Migration
             $table->char('no_registrasi', 15)->unique();
             $table->string('nm_yayasan');
             $table->year('thn_berdiri');
-            $table->string('telp', 15);
+            $table->string('telp', 15)->nullable();
             $table->string('email', 50)->unique();
-            $table->string('kecamatan');
-            $table->text('alamat');
-            $table->enum('bhpnu', ['yes', 'no']);
+            $table->string('kecamatan')->nullable();
+            $table->text('alamat')->nullable();
+            $table->enum('bhpnu', ['yes', 'no'])->nullable();
             $table->timestamps();
             $table->foreign('jenjang_id')->references('id')->on('jenjang')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('kab_id')->references('id')->on('kabupaten')->onDelete('restrict')->onUpdate('restrict');
