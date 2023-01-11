@@ -10,6 +10,7 @@ class Sekolah extends Model
     use HasFactory;
     protected $table = 'sekolah';
     protected $primaryKey = 'id';
+    protected $hidden = ['created_at', 'updated_at'];
     protected $fillable = [
         'jenjang_id',
         'kab_id',
